@@ -15,11 +15,11 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Relic &mdash; A free Responsive HTML5 Template by FREEHTML5.CO</title>
+	<title>IRHS OCE Proposal</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-  	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-  	<meta name="author" content="FREEHTML5.CO" />
+	<meta name="description" content="IRHS OCE AdvancingEducation Proposal" />
+  	<meta name="keywords" content="irhs, oce, advancingeducation, technology" />
+  	<meta name="author" content="IRHS" />
 
   	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   	<link rel="shortcut icon" href="favicon.ico">
@@ -215,27 +215,39 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
 
 		<script type="text/javascript">
 		$(document).on("ready", function(){
+			/* 					 */
+			/* Functions */
+			/* 					 */
 			//scroll to anchor
     	function scrollToAnchor(tag) {
         	$('html,body').animate({
             	scrollTop: tag.offset().top
-        	}, 1000);
+        	}, 666);
     	}
 
-			//Green room section secondary colour
+			/* 					 */
+			/* Variables */
+			/* 					 */
+			$ctaButton = $('#fh5co-hero > div.container > div > div > p:nth-child(4) > a');
+			$mainDiv = $('main');
+
+			/* 				    */
+			/*    Main    */
+			/* 				 	  */
+			//Change rooms to secondary colour
 			$('#greenLink').css("color", "#00FF00");
 			$('#greenSpan').css("background", "#00FF00");
-
-			//Gold room section secondary colour
 			$('#goldLink').css("color", "#FFFF00");
 			$('#goldSpan').css("background", "#FFFF00");
-
-			//Red room section secondary colour
 			$('#redLink').css("color", "#FF0000");
 			$('#redSpan').css("background", "#FF0000");
 
-			$('#fh5co-hero > div.container > div > div > p:nth-child(4) > a').on("click", function(){
-				scrollToAnchor($('main'));
+			$ctaButton.css("border", "2px solid red");
+			$ctaButton.css("background", "red");
+
+			//scroll down to main section when buttn clicked
+			$ctaButton.on("click", function(){
+				scrollToAnchor($mainDiv);
 			});
 		});
 		</script>
