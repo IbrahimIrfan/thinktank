@@ -126,10 +126,10 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
 						<section>
 							<h5 class="text-muted text-uppercase fh5co-no-margin-bottom fh5co-letter-space">Room 202</h5>
 							<br class="fh5co-spacer fh5co-spacer-xxs">
-							<h2 class="fh5co-heading-with-border"><span class="fh5co-border"></span>Green Room</h2>
+							<h2 class="fh5co-heading-with-border"><span id="greenSpan" class="fh5co-border"></span>Green Room</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa doloribus molestias, explicabo itaque, quos consequatur quam, tempore enim voluptatum nulla quas iusto voluptate quae modi commodi maiores voluptatibus perspiciatis aut! Lorem ipsum.</p>
 
-							<p><a href="#" class="fh5co-link"><i class="fa fa-angle-right"></i> View Project</a></p>
+							<p><a id="greenLink" href="#" class="fh5co-link"><i class="fa fa-angle-right"></i> View Project</a></p>
 						</section>
 					</div>
 						<div class="col-md-8">
@@ -155,10 +155,10 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
 							<section>
 								<h5 class="text-muted text-uppercase fh5co-no-margin-bottom fh5co-letter-space">Room 218</h5>
 								<br class="fh5co-spacer fh5co-spacer-xxs">
-								<h2 class="fh5co-heading-with-border"><span class="fh5co-border"></span>Gold Room</h2>
+								<h2 class="fh5co-heading-with-border"><span id="goldSpan" class="fh5co-border"></span>Gold Room</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa doloribus molestias, explicabo itaque, quos consequatur quam, tempore enim voluptatum nulla quas iusto voluptate quae modi commodi maiores voluptatibus perspiciatis aut! Lorem ipsum.</p>
 
-								<p><a href="#" class="fh5co-link"><i class="fa fa-angle-right"></i> View Project</a></p>
+								<p><a id="goldLink" href="#" class="fh5co-link"><i class="fa fa-angle-right"></i> View Project</a></p>
 							</section>
 						</div>
 					</div>
@@ -174,10 +174,10 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
 						<section>
 							<h5 class="text-muted text-uppercase fh5co-no-margin-bottom fh5co-letter-space">Room 302</h5>
 							<br class="fh5co-spacer fh5co-spacer-xxs">
-							<h2 class="fh5co-heading-with-border"><span class="fh5co-border"></span>Red Room</h2>
+							<h2 class="fh5co-heading-with-border"><span id="redSpan" class="fh5co-border"></span>Red Room</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa doloribus molestias, explicabo itaque, quos consequatur quam, tempore enim voluptatum nulla quas iusto voluptate quae modi commodi maiores voluptatibus perspiciatis aut! Lorem ipsum.</p>
 
-							<p><a href="#" class="fh5co-link"><i class="fa fa-angle-right"></i> View Project</a></p>
+							<p><a id="redLink" href="#" class="fh5co-link"><i class="fa fa-angle-right"></i> View Project</a></p>
 						</section>
 					</div>
 						<div class="col-md-8">
@@ -212,6 +212,33 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
 		<script src="js/jquery-1.10.2.min.js"></script>
 		<!-- jQuery Easing -->
 		<script src="js/jquery.easing.1.3.js"></script>
+
+		<script type="text/javascript">
+		$(document).on("ready", function(){
+			//scroll to anchor
+    	function scrollToAnchor(tag) {
+        	$('html,body').animate({
+            	scrollTop: tag.offset().top
+        	}, 1000);
+    	}
+
+			//Green room section secondary colour
+			$('#greenLink').css("color", "#00FF00");
+			$('#greenSpan').css("background", "#00FF00");
+
+			//Gold room section secondary colour
+			$('#goldLink').css("color", "#FFFF00");
+			$('#goldSpan').css("background", "#FFFF00");
+
+			//Red room section secondary colour
+			$('#redLink').css("color", "#FF0000");
+			$('#redSpan').css("background", "#FF0000");
+
+			$('#fh5co-hero > div.container > div > div > p:nth-child(4) > a').on("click", function(){
+				scrollToAnchor($('main'));
+			});
+		});
+		</script>
 		<!-- Bootstrap -->
 		<script src="js/bootstrap.js"></script>
 		<!-- Owl carousel -->
