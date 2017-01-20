@@ -282,7 +282,7 @@
             <div class="fh5co-call-to-action-wrap">
                 <div class="fh5co-call-to-action-inner text-center">
                     <h3 class="fh5co-call-to-action-text">Questions?</h3>
-                    <a href="#" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="mailto:pattersonka@hdsb.ca?Subject=OCE%20Grant%20Response" target="_top" class="btn btn-primary btn-lg">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -350,37 +350,30 @@
 
                 var rooms = {
                   "blue": {
-                    "title": "Blue Room",
                     "roomNum": 201,
                     "desc": "This is the blue room."
                   },
                   "green": {
-                    "title": "Green Room",
                     "roomNum": 202,
                     "desc": "This is the green room."
                   },
                   "gold": {
-                    "title": "Gold Room",
                     "roomNum": 218,
                     "desc": "This is the gold room."
                   },
                   "red": {
-                    "title": "Red Room",
                     "roomNum": 302,
                     "desc": "This is the red room."
                   },
                   "purple":{
-                    "title": "Purple Room",
                     "roomNum": "for Book Storage",
                     "desc": "This is the purple room."
                   },
                   "orange":{
-                    "title": "Orange Room",
                     "roomNum": "Library AV",
                     "desc": "This is the orange room."
                   },
                   "pink":{
-                      "title": "Pink Room",
                       "roomNum": "above Gymnasium",
                       "desc": "This is the pink room."
                   }
@@ -421,6 +414,7 @@
                       afterLoad: function() {
                           this.content = "";
                           this.inner.prepend('<h1>' + capFirstLetter(roomColour) + ' Room (Room ' + roomClicked["roomNum"] + ')</h1>');
+                          this.content += "<img src='images/" + roomColour + "Diagram.png'><br>";
                           this.content += roomClicked["desc"];
                       }
                   });
