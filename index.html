@@ -81,8 +81,8 @@
         <div class="container">
             <div class="fh5co-hero-text-wrap">
                 <div class="fh5co-hero-text">
-                    <h1 style="font-size: 75px">IRHS OCE Proposal</h1>
-                    <p>Effectively and efficiently using our current space for student driven innovation and initiatives in STEAM</p>
+                    <h1 style="font-size: 75px">Color Me Creative</h1>
+                    <p>Effectively using our spaces for student driven innovation in STEAM</p>
                     <br class="fh5co-spacer fh5co-spacer-sm">
                     <p>
                         <a href="#" class="btn btn-primary fh5co-hero-btn">Learn More</a>
@@ -325,78 +325,87 @@
                 /* 					 */
                 /* Functions */
                 /* 					 */
+
                 //scroll to anchor
                 function scrollToAnchor(tag) {
                     $('html,body').animate({
                         scrollTop: tag.offset().top
                     }, 666);
                 }
+
                 //capitalize first letter of string
                 function capFirstLetter(string) {
                   return string.charAt(0).toUpperCase() + string.slice(1);
                 }
+
                 /* 					 */
                 /* Variables */
                 /* 					 */
                 $ctaButton = $('#fh5co-hero > div.container > div > div > p:nth-child(4) > a');
                 $mainDiv = $('main');
-                $blueRoomBtn = $('#blueLink');
-                $greenRoomBtn = $('#greenLink');
-                $goldRoomBtn = $('#goldLink');
-                $redRoomBtn = $('#redLink');
-                $orangeRoomBtn = $('#orangeLink');
-                $pinkRoomBtn = $('#pinkLink');
-                $purpleRoomBtn = $('#purpleLink');
 
                 var rooms = {
                   "blue": {
                     "roomNum": 201,
-                    "desc": "This is the blue room."
+                    "usedNow": "Currently, the Blue Room is used to hold Link Crew Commissioner meetings twice a month. Also, it is used by Arts Council twice a week for meetings at lunch.",
+                    "usedAfter": ""
                   },
                   "green": {
                     "roomNum": 202,
-                    "desc": "This is the green room."
+                    "usedNow": "This is the green room.",
+                    "usedAfter": ""
                   },
                   "gold": {
                     "roomNum": 218,
-                    "desc": "This is the gold room."
+                    "usedNow": "This is the gold room.",
+                    "usedAfter": ""
                   },
                   "red": {
                     "roomNum": 302,
-                    "desc": "This is the red room."
+                    "usedNow": "This is the red room.",
+                    "usedAfter": ""
                   },
                   "purple":{
                     "roomNum": "for Book Storage",
-                    "desc": "This is the purple room."
+                    "usedNow": "This is the purple room.",
+                    "usedAfter": ""
                   },
                   "orange":{
                     "roomNum": "Library AV",
-                    "desc": "This is the orange room."
+                    "usedNow": "This is the orange room.",
+                    "usedAfter": ""
                   },
                   "pink":{
                       "roomNum": "above Gymnasium",
-                      "desc": "This is the pink room."
+                      "usedNow": "This is the pink room.",
+                      "usedAfter": ""
                   }
                 }
-                /* 				    */
-                /*    Main    */
-                /* 				 	  */
+
+                // CSS CHANGES:
+
                 //Change rooms to secondary colour
-                $greenRoomBtn.css("color", "#8BC34A");
+                $('#greenLink').css("color", "#8BC34A");
                 $('#greenSpan').css("background", "#8BC34A");
-                $goldRoomBtn.css("color", "#FFC107");
+                $('#goldLink').css("color", "#FFC107");
                 $('#goldSpan').css("background", "#FFC107");
-                $redRoomBtn.css("color", "#F44336");
+                $('#redLink').css("color", "#F44336");
                 $('#redSpan').css("background", "#F44336");
-                $orangeRoomBtn.css("color", "#FF9800");
+                $('#orangeLink').css("color", "#FF9800");
                 $('#orangeSpan').css("background", "#FF9800");
-                $purpleRoomBtn.css("color", "#9C27B0");
+                $('#purpleLink').css("color", "#9C27B0");
                 $('#purpleSpan').css("background", "#9C27B0");
-                $pinkRoomBtn.css("color", "#E91E63");
+                $('#pinkLink').css("color", "#E91E63");
                 $('#pinkSpan').css("background", "#E91E63");
+
                 //change cta button colour
                 $ctaButton.css("border", "2px solid #F44336");
                 $ctaButton.css("background", "#F44336");
+
+                /* 				    */
+                /*    Main    */
+                /* 				 	  */
+
                 //scroll down to main section when cta button clicked
                 $ctaButton.on("click", function() {
                     scrollToAnchor($mainDiv);
@@ -414,8 +423,11 @@
                       afterLoad: function() {
                           this.content = "";
                           this.inner.prepend('<h1>' + capFirstLetter(roomColour) + ' Room (Room ' + roomClicked["roomNum"] + ')</h1>');
-                          this.content += "<img src='images/" + roomColour + "Diagram.png'><br>";
-                          this.content += roomClicked["desc"];
+                          this.content += "<img align='left' class='floorDiagram' src='images/" + roomColour + "Diagram.png'>";
+                          this.content += "<b>Usage - Before</b><br>";
+                          this.content += roomClicked["usedNow"];
+                          this.content += "<br><b>Usage - After</b><br>";
+                          this.content += roomClicked["usedAfter"];
                       }
                   });
                 });
