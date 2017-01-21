@@ -40,6 +40,11 @@
     <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
     <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
 
+    <style>
+    .floorDiagram{
+      padding-right: 20px;
+    }
+    </style>
 
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
@@ -347,42 +352,35 @@
                 var rooms = {
                   "blue": {
                     "roomNum": 201,
-                    "usedNow": "Currently, the Blue Room is used to hold Link Crew Commissioner meetings twice a month. Also, it is used by Arts Council twice a week for meetings at lunch.",
-                    "usedAfter": ""
+                    "usedNow": "Currently, the Blue Room is being used to hold Link Crew Commissioner meetings once a month. Also, it is used by Arts Council once a week for meetings at lunch."
                   },
                   "green": {
                     "roomNum": 202,
-                    "usedNow": "This is the green room.",
-                    "usedAfter": ""
+                    "usedNow": "Currently, the Green Room is being used 1 week a year for graduation photos, 1 week a year for summative interviews and 2 weeks a year for GPP interviews."
                   },
                   "gold": {
                     "roomNum": 218,
-                    "usedNow": "This is the gold room.",
-                    "usedAfter": ""
+                    "usedNow": "Currently, the Gold Room is being used 4 periods per week for student learning in the Languages department."
                   },
                   "red": {
                     "roomNum": 302,
-                    "usedNow": "This is the red room.",
-                    "usedAfter": ""
+                    "usedNow": "Currently, the Red Rom is being used by teachers sporadically throughout the day, as a lunch and storage room. It is also being used for 2 meetings every semester."
                   },
                   "purple":{
                     "roomNum": "for Book Storage",
-                    "usedNow": "This is the purple room.",
-                    "usedAfter": ""
+                    "usedNow": "Currently, the Purple Room is being used for book storage."
                   },
                   "orange":{
                     "roomNum": "Library AV",
-                    "usedNow": "This is the orange room.",
-                    "usedAfter": ""
+                    "usedNow": "Currently, the Orange Room is being used to watch movies 12 times a year."
                   },
                   "pink":{
                       "roomNum": "above Gymnasium",
-                      "usedNow": "This is the pink room.",
-                      "usedAfter": ""
+                      "usedNow": "Currently, the Pink Room is rarely entered and is never used except for storage."
                   }
                 }
 
-                // CSS CHANGES:
+                // CSS CHANGES
 
                 //Change rooms to secondary colour
                 $('#greenLink').css("color", "#8BC34A");
@@ -424,10 +422,8 @@
                           this.content = "";
                           this.inner.prepend('<h1>' + capFirstLetter(roomColour) + ' Room (Room ' + roomClicked["roomNum"] + ')</h1>');
                           this.content += "<img align='left' class='floorDiagram' src='images/" + roomColour + "Diagram.png'>";
-                          this.content += "<b>Usage - Before</b><br>";
+                          this.content += "<b>Current Usage</b><br>";
                           this.content += roomClicked["usedNow"];
-                          this.content += "<br><b>Usage - After</b><br>";
-                          this.content += roomClicked["usedAfter"];
                       }
                   });
                 });
